@@ -1,8 +1,7 @@
 pipeline {
     agent any
     environment {
-        //be sure to replace "bhavukm" with your own Docker Hub username
-        DOCKER_IMAGE_NAME = "bhavukm/train-schedule"
+        DOCKER_IMAGE_NAME = "srinivassayyapureddy/train-schedule"
     }
     stages {
         stage('Build') {
@@ -31,7 +30,7 @@ pipeline {
             }
             steps {
                 script {
-                    docker.withRegistry('https://registry.hub.docker.com', 'docker_hub_login') {
+                    docker.withRegistry('https://registry.hub.docker.com', '396dbd1d-1585-49f6-98a0-eb46dda83897') {
                         app.push("${env.BUILD_NUMBER}")
                         app.push("latest")
                     }
