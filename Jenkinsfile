@@ -13,7 +13,7 @@ pipeline {
                 script 
                 {
 
-                    checkout([$class: 'GitSCM', branches: [[name: '${BRANCH}']],  userRemoteConfigs: [[url: '${REPO_URL}']]])
+                    checkout([$class: 'GitSCM', branches: [[name: 'master']],  userRemoteConfigs: [[url: '${REPO_URL}']]])
                   
                  
                 }
