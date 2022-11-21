@@ -3,8 +3,8 @@ pipeline {
         label 'agent01'
     }
     environment { 
-           DOCKER_IMAGE_NAME="srinivassayyapureddy/train-schedule"
-           DOCKERHUB_CREDENTIALS=credentials('396dbd1d-1585-49f6-98a0-eb46dda83897')
+           DOCKER_IMAGE_NAME = "srinivassayyapureddy/train-schedule"
+           DOCKERHUB_CREDENTIALS = credentials('396dbd1d-1585-49f6-98a0-eb46dda83897')
     }  
     stages {
         stage('Clone MS-Repo') {
