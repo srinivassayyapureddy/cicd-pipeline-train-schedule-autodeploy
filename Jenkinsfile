@@ -5,7 +5,6 @@ pipeline {
     environment { 
            DOCKER_IMAGE_NAME = "srinivassayyapureddy/train-schedule"
            DOCKERHUB_CREDENTIALS = credentials('396dbd1d-1585-49f6-98a0-eb46dda83897')
-           REPO_URL = "https://github.com/srinivassayyapureddy/cicd-pipeline-train-schedule-autodeploy.git"
     }  
     stages {
         stage('Clone MS-Repo') {
@@ -13,7 +12,7 @@ pipeline {
                 script 
                 {
 
-                    checkout([$class: 'GitSCM', branches: [[name: 'master']],  userRemoteConfigs: [[url: '${REPO_URL}']]])
+                    checkout([$class: 'GitSCM', branches: [[name: 'master']],  userRemoteConfigs: [[url: 'https://github.com/srinivassayyapureddy/cicd-pipeline-train-schedule-autodeploy.git']]])
                   
                  
                 }
