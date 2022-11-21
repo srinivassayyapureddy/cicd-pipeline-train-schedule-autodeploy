@@ -11,7 +11,10 @@ pipeline {
             steps {
                 script 
                 {
-                    checkout([$class: 'GitSCM', branches: [[name: master]],  userRemoteConfigs: [[ url: '${REPO_URL}']]])
+                    sh '''
+                    echo "cloning the repo"
+                    git clone https://github.com/srinivassayyapureddy/cicd-pipeline-train-schedule-autodeploy.git
+                    '''
                  
                 }
             }				
