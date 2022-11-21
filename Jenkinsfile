@@ -24,7 +24,7 @@ pipeline {
                 script {
                 sh '''
                 echo 'Gradle Build Started'
-                ./gradlew clean build
+                ./gradlew build --no-daemon
                
                '''
                 }   
