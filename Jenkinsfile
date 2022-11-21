@@ -47,6 +47,7 @@ pipeline {
                   
                   kubectl get pods
                   kubectl apply -f .cicd-pipeline-train-schedule-autodeploy/train-schedule-kube.yml
+                  '''
 
             } 
         }
