@@ -5,16 +5,16 @@ pipeline {
     environment { 
            DOCKER_IMAGE_NAME = "srinivassayyapureddy/train-schedule"
            DOCKERHUB_CREDENTIALS = credentials('396dbd1d-1585-49f6-98a0-eb46dda83897')
+           REPO_URL = "https://github.com/srinivassayyapureddy/cicd-pipeline-train-schedule-autodeploy.git"
     }  
     stages {
         stage('Clone MS-Repo') {
             steps {
                 script 
                 {
-                    sh '''
-                    echo "cloning the repo"
-                    git clone https://github.com/srinivassayyapureddy/cicd-pipeline-train-schedule-autodeploy.git
-                    '''
+
+                    checkout([$class: 'GitSCM', branches: [[name: '${BRANCH}']],  userRemoteConfigs: [[credentialsId: 'gitlab-ssh', url: '${REPO_URL}']]])
+                  
                  
                 }
             }				
